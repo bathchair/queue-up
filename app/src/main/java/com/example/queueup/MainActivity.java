@@ -30,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+    public void goChat(View v){
+        startActivity(new Intent(MainActivity.this,Chat.class));
     }
 }
