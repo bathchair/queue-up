@@ -22,13 +22,17 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_page);
 
+        // Circular Search Button
 
         ImageButton searchBtn = findViewById(R.id.search_btn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
-                // TODO
+                Intent intent = new Intent(context, SearchResultActivity.class);
+                startActivity(intent);
             }
         });
+
+        // TODO: Filters
 
         // Navigation Bar Buttons below
 
@@ -58,5 +62,4 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
     }
-
 }
