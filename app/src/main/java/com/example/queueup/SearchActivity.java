@@ -23,7 +23,6 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.search_page);
 
         // Circular Search Button
-
         ImageButton searchBtn = findViewById(R.id.search_btn);
         searchBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View V) {
@@ -32,10 +31,22 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
 
-        // TODO: Filters
+        // Filter Buttons
+        ImageButton selectGame = findViewById(R.id.select_game_btn);
+        selectGame.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                // TODO
+            }
+        });
 
-        // Navigation Bar Buttons below
+        ImageButton selectRank = findViewById(R.id.select_rank_btn);
+        selectRank.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View V) {
+                // TODO
+            }
+        });
 
+        // Navigation Bar Buttons
         ImageButton homeButton = findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

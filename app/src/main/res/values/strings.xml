@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">QueueUp</string>
+    <string name="settings_button">Settings</string>
     <string name="ok">Save</string>
     <string name="cancel">Cancel</string>
     <string name="add_game">Add Game</string>
+    <string name="home_button">Home Button</string>
+    <string name="notification_button">Notifications Button</string>
+    <string name="profile_button">Profile Button</string>
+    <string name="search_button">Search Button</string>
+    <string name="chat_button">Chat Button</string>
+    <string name="filters">Filters</string>
+    <string name="select_game">Filter Game</string>
+    <string name="select_rank">Filter Rank</string>
 </resources>
