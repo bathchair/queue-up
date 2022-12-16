@@ -89,6 +89,31 @@
                     android:scaleType="matrix"
                     app:srcCompat="@drawable/select_rank" />
 
+                <ImageView
+                    android:id="@+id/location_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/filters"
+                    app:srcCompat="@drawable/location_range" />
+
+                <SeekBar
+                    android:id="@+id/locationSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/age_range"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/filters"
+                    app:srcCompat="@drawable/age_range"
+                    tools:ignore="ImageContrastCheck" />
+
+                <SeekBar
+                    android:id="@+id/ageSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
         </ScrollView>
 
