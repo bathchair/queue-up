@@ -6,6 +6,7 @@
         <item><string name="valorant">Valorant</string></item>
     </array>
     <string-array name="game_dropdown">
+        <item>Select Game</item>
         <item>Apex Legends</item>
         <item>Fortnite</item>
         <item>League of Legends</item>
@@ -14,6 +15,7 @@
         <item>Valorant</item>
     </string-array>
     <string-array name="rank_dropdown">
+        <item>Select Rank</item>
         <item>Iron</item>
         <item>Bronze</item>
         <item>Silver</item>

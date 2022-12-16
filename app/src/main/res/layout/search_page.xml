@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2E2886"
-    android:paddingBottom="10dp">
+    android:paddingBottom="50dp">
 
     <RelativeLayout
         android:id="@+id/searchScreen"
@@ -93,38 +93,33 @@
                     </TableRow>
 
                     <TableRow
-                        android:id="@+id/GameDropdown"
+                        android:id="@+id/GameSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center">
-
-                        <ImageButton
-                            android:id="@+id/select_game_btn"
+                        <Spinner
+                            android:id="@+id/game_spinner"
                             android:layout_width="match_parent"
-                            android:layout_height="87dp"
-                            android:adjustViewBounds="false"
-                            android:background="#00FFFFFF"
-                            android:baselineAlignBottom="false"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/select_btn_bg"
                             android:contentDescription="@string/select_game"
-                            android:scaleType="matrix"
-                            app:srcCompat="@drawable/select_game" />
+                            android:spinnerMode="dropdown" />
                     </TableRow>
 
                     <TableRow
-                        android:id="@+id/RankDropdown"
+                        android:id="@+id/RankSpinner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:paddingBottom="5dp">
 
-                        <ImageButton
-                            android:id="@+id/select_rank_btn"
+                        <Spinner
+                            android:id="@+id/rank_spinner"
                             android:layout_width="match_parent"
-                            android:layout_height="98dp"
-                            android:background="#00FFFFFF"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/select_btn_bg"
                             android:contentDescription="@string/select_rank"
-                            android:scaleType="matrix"
-                            app:srcCompat="@drawable/select_rank"
-                            tools:ignore="ImageContrastCheck" />
+                            android:spinnerMode="dropdown" />
                     </TableRow>
 
                     <TableRow
@@ -149,9 +144,10 @@
                         android:gravity="center">
 
                         <SeekBar
-                            android:id="@+id/ageSeekBar"
+                            android:id="@+id/locationSeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:max="500"
                             android:paddingBottom="5dp" />
                     </TableRow>
 
@@ -177,25 +173,15 @@
                         android:gravity="center">
 
                         <SeekBar
-                            android:id="@+id/locationSeekBar"
+                            android:id="@+id/ageSeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:max="100"
                             android:paddingBottom="5dp"
                             android:progressTint="#009688" />
                     </TableRow>
 
                 </TableLayout>
-
-                <Spinner
-                    android:id="@+id/game_spinner"
-                    android:spinnerMode="dropdown"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <Spinner
-                    android:id="@+id/rank_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </ScrollView>
