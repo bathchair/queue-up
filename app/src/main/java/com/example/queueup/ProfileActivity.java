@@ -65,6 +65,14 @@ public class ProfileActivity extends AppCompatActivity implements AddGameDialog.
                 addGameDialog();
             }
         });
+
+        ImageButton resultButton = findViewById(R.id.notificationButton);
+        resultButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SearchResultActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void addGameDialog() {
@@ -99,7 +107,5 @@ public class ProfileActivity extends AppCompatActivity implements AddGameDialog.
         gameLibrary.removeView(addGameImage);
         gameLibrary.addView(gameImage, size - 1);
         gameLibrary.addView(addGameImage, size);
-        finish();
-        startActivity(getIntent());
     }
 }

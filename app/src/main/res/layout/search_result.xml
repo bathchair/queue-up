@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchResultScreen"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0B132B"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#1C2541"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="200dp"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/settings" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/botbar"
+        android:layout_below="@id/topbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/carousel"
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                app:carouselPaddingEnd="20dp"
+                app:carouselPaddingStart="20dp"
+                app:imageScaleType="centerCrop"
+                app:showCaption="false" />
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Ludwig"
+                android:textColor="#53B9A9"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/profileDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="27 • Los Angeles, CA • he/him"
+                android:textColor="#6685AB"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/aboutMeHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text="About Me"
+                android:textColor="#6685AB"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/aboutMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:text="here goes his bio vroom vroom chess boxing dec 11"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/gameHeader"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:text="Game Match!"
+                        android:textAlignment="center"
+                        android:textColor="#53B8A8"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/league_of_legends" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/rankHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="50dp"
+                        android:text="Rank"
+                        android:textAlignment="center"
+                        android:textColor="#53B8A8"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/rankTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:text="Gold IV"
+                        android:textAlignment="center"
+                        android:textColor="#FFC107"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        app:srcCompat="@drawable/message_button" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/botbar"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:layout_alignParentBottom="true"
+        android:background="#1C2541"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/home" />
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/notif" />
+
+        <ImageButton
+            android:id="@+id/searchButton"
+            android:layout_width="93dp"
+            android:layout_height="97dp"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/search" />
+
+        <ImageButton
+            android:id="@+id/chatButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/message" />
+
+        <ImageButton
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:padding="5dp"
+            app:srcCompat="@drawable/profile" />
+    </LinearLayout>
+
+</RelativeLayout>

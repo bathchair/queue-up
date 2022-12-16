@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>]
     <array name="games">
+        <item><string name="fortnite">Fortnite</string></item>
         <item><string name="lol">League of Legends</string></item>
         <item><string name="valorant">Valorant</string></item>
-        <item><string name="fortnite">Fortnite</string></item>
     </array>
 </resources>

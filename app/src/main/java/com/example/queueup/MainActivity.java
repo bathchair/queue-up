@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private View mainScreen;
     private View profileScreen;
+    private View searchResultScreen;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -27,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         profileButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton resultButton = findViewById(R.id.notificationButton);
+        resultButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SearchResultActivity.class);
                 startActivity(intent);
             }
         });
