@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private View mainScreen;
     private View profileScreen;
+    private View searchScreen;
     private View searchResultScreen;
 
     @SuppressLint("MissingInflatedId")
@@ -23,19 +24,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mainScreen = findViewById(R.id.mainScreen);
         profileScreen = findViewById(R.id.profileScreen);
-
-        ImageButton profileButton = findViewById(R.id.profileButton);
-        profileButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ProfileActivity.class);
-                startActivity(intent);
-            }
-        });
+        searchScreen = findViewById(R.id.searchScreen);
 
         ImageButton resultButton = findViewById(R.id.notificationButton);
         resultButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(context, SearchResultActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // TODO: chat button
+
+        ImageButton profileButton = findViewById(R.id.profileButton);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProfileActivity.class);
                 startActivity(intent);
             }
         });
