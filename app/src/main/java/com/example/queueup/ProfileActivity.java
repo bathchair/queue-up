@@ -1,21 +1,26 @@
 package com.example.queueup;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TableLayout.LayoutParams;
+import android.widget.TableRow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity implements AddGameDialog.OnDialogSelectorListener {
 
     @SuppressLint({"MissingInflatedId", "LocalSuppress"})
     @Override
@@ -53,6 +58,48 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView addGameButton = findViewById(R.id.addGameButton);
+        addGameButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addGameDialog();
+            }
+        });
     }
 
+    public void addGameDialog() {
+        AddGameDialog newFragment = new AddGameDialog();
+        newFragment.show(getSupportFragmentManager(), "add_game");
+    }
+
+    public void onSelectedOption(int selectedIndex) {
+        System.out.println(selectedIndex);
+        addGame(selectedIndex);
+    }
+
+    public void addGame(int choice) {
+        TableRow gameLibrary = findViewById(R.id.realGameLibrary);
+        ImageView gameImage = new ImageView(ProfileActivity.this);
+        ImageView addGameImage = findViewById(R.id.addGameButton);
+        gameImage.setPadding(5, 5, 5, 5);
+        gameImage.setLayoutParams(new LayoutParams(100,
+                LayoutParams.WRAP_CONTENT));
+        switch (choice) {
+            case 0:
+                gameImage.setImageResource(R.drawable.league_of_legends);
+                break;
+            case 1:
+                gameImage.setImageResource(R.drawable.valorant);
+               break;
+            case 2:
+                gameImage.setImageResource(R.drawable.fortnite);
+                break;
+        }
+        int size = gameLibrary.getVirtualChildCount();
+        gameLibrary.removeView(addGameImage);
+        gameLibrary.addView(gameImage, size - 1);
+        gameLibrary.addView(addGameImage, size);
+        finish();
+        startActivity(getIntent());
+    }
 }
