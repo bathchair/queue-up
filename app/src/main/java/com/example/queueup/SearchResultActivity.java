@@ -56,6 +56,15 @@ public class SearchResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageButton searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageButton profileButton = findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

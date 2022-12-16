@@ -5,13 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 import androidx.appcompat.app.AppCompatActivity;
-import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
     @SuppressLint({"MissingInflatedId", "LocalSuppress"})
@@ -33,16 +29,24 @@ public class SearchActivity extends AppCompatActivity {
 
         // Filter Buttons
         ImageButton selectGame = findViewById(R.id.select_game_btn);
+        Spinner gameSpinner = findViewById(R.id.game_spinner);
+        ArrayAdapter<CharSequence> gameAdapter = ArrayAdapter.createFromResource(this,
+                R.array.game_dropdown, android.R.layout.simple_spinner_item);
         selectGame.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View V) {
-                // TODO
+            public void onClick(View V) { // TODO
+                gameAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                gameSpinner.setAdapter(gameAdapter);
             }
         });
 
         ImageButton selectRank = findViewById(R.id.select_rank_btn);
+        Spinner rankSpinner = findViewById(R.id.rank_spinner);
+        ArrayAdapter<CharSequence> rankAdapter = ArrayAdapter.createFromResource(this,
+                R.array.rank_dropdown, android.R.layout.simple_spinner_item);
         selectRank.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View V) {
-                // TODO
+            public void onClick(View V) { // TODO
+                rankAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                rankSpinner.setAdapter(rankAdapter);
             }
         });
 
@@ -58,8 +62,7 @@ public class SearchActivity extends AppCompatActivity {
         ImageButton resultButton = findViewById(R.id.notificationButton);
         resultButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(context, SearchResultActivity.class);
-                startActivity(intent);
+                // TODO
             }
         });
 

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E2886">
+    android:background="#2E2886"
+    android:paddingBottom="10dp">
 
     <RelativeLayout
         android:id="@+id/searchScreen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#0B132B"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent"
+        android:background="#0B132B">
 
         <LinearLayout
             android:id="@+id/topBarSearch"
@@ -28,7 +28,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
-                android:paddingLeft="5dp"
+                android:contentDescription="@string/app_name"
+                android:paddingStart="5dp"
                 android:paddingTop="5dp"
                 android:paddingEnd="200dp"
                 app:srcCompat="@drawable/logo" />
@@ -38,6 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/settings_button"
                 android:padding="5dp"
                 app:srcCompat="@drawable/settings" />
 
@@ -59,58 +61,139 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#00FFFFFF"
-                    app:srcCompat="@drawable/search_btn" />
+                    android:contentDescription="@string/search_button"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    app:srcCompat="@drawable/search_btn"
+                    tools:ignore="DuplicateSpeakableTextCheck,RedundantDescriptionCheck,ImageContrastCheck" />
 
-                <TextView
-                    android:id="@+id/filters"
+                <TableLayout
+                    android:id="@+id/FiltersModal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#313C76"
-                    android:text=" Filters"
-                    android:textColor="#53B9A9"
-                    android:textSize="48sp"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:background="#1F264C"
+                    android:outlineProvider="none">
 
-                <ImageButton
-                    android:id="@+id/select_game_btn"
-                    android:layout_width="481dp"
-                    android:layout_height="87dp"
-                    android:adjustViewBounds="false"
-                    android:background="#00FFFFFF"
-                    android:baselineAlignBottom="false"
-                    android:scaleType="matrix"
-                    app:srcCompat="@drawable/select_game" />
+                    <TableRow
+                        android:id="@+id/FiltersText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
 
-                <ImageButton
-                    android:id="@+id/select_rank_btn"
-                    android:layout_width="461dp"
-                    android:layout_height="98dp"
-                    android:background="#00FFFFFF"
-                    android:scaleType="matrix"
-                    app:srcCompat="@drawable/select_rank" />
+                        <TextView
+                            android:id="@+id/filters"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#1F264C"
+                            android:gravity="center"
+                            android:text="@string/filters"
+                            android:textColor="#53B9A9"
+                            android:textSize="50sp"
+                            android:textStyle="bold" />
+                    </TableRow>
 
-                <ImageView
-                    android:id="@+id/location_range"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/filters"
-                    app:srcCompat="@drawable/location_range" />
+                    <TableRow
+                        android:id="@+id/GameDropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
 
-                <SeekBar
-                    android:id="@+id/locationSeekBar"
+                        <ImageButton
+                            android:id="@+id/select_game_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="87dp"
+                            android:adjustViewBounds="false"
+                            android:background="#00FFFFFF"
+                            android:baselineAlignBottom="false"
+                            android:contentDescription="@string/select_game"
+                            android:scaleType="matrix"
+                            app:srcCompat="@drawable/select_game" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/RankDropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/select_rank_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="98dp"
+                            android:background="#00FFFFFF"
+                            android:contentDescription="@string/select_rank"
+                            android:scaleType="matrix"
+                            app:srcCompat="@drawable/select_rank"
+                            tools:ignore="ImageContrastCheck" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/LocationRangeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/location_range"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/filters"
+                            app:srcCompat="@drawable/location_range"
+                            tools:ignore="ImageContrastCheck" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/LocationSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <SeekBar
+                            android:id="@+id/ageSeekBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="5dp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/AgeRangeText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/age_range"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/filters"
+                            app:srcCompat="@drawable/age_range"
+                            tools:ignore="ImageContrastCheck" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/AgeSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+                        <SeekBar
+                            android:id="@+id/locationSeekBar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="5dp"
+                            android:progressTint="#009688" />
+                    </TableRow>
+
+                </TableLayout>
+
+                <Spinner
+                    android:id="@+id/game_spinner"
+                    android:spinnerMode="dropdown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <ImageView
-                    android:id="@+id/age_range"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/filters"
-                    app:srcCompat="@drawable/age_range"
-                    tools:ignore="ImageContrastCheck" />
-
-                <SeekBar
-                    android:id="@+id/ageSeekBar"
+                <Spinner
+                    android:id="@+id/rank_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -131,42 +214,52 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/home_button"
                 android:padding="5dp"
-                app:srcCompat="@drawable/home" />
+                app:srcCompat="@drawable/home"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/notificationButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/notification_button"
                 android:padding="5dp"
-                app:srcCompat="@drawable/notif" />
+                app:srcCompat="@drawable/notif"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/searchButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/search_button"
                 android:padding="5dp"
-                app:srcCompat="@drawable/search" />
+                app:srcCompat="@drawable/search"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/chatButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/chat_button"
                 android:padding="5dp"
-                app:srcCompat="@drawable/message" />
+                app:srcCompat="@drawable/message"
+                tools:ignore="RedundantDescriptionCheck" />
 
             <ImageButton
                 android:id="@+id/profileButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00FFFFFF"
+                android:contentDescription="@string/profile_button"
                 android:padding="5dp"
-                app:srcCompat="@drawable/profile" />
+                app:srcCompat="@drawable/profile"
+                tools:ignore="RedundantDescriptionCheck" />
         </LinearLayout>
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

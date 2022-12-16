@@ -73,6 +73,14 @@ public class ProfileActivity extends AppCompatActivity implements AddGameDialog.
                 startActivity(intent);
             }
         });
+
+        ImageButton searchButton = findViewById(R.id.searchButton);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void addGameDialog() {

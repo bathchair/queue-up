@@ -5,4 +5,23 @@
         <item><string name="lol">League of Legends</string></item>
         <item><string name="valorant">Valorant</string></item>
     </array>
+    <string-array name="game_dropdown">
+        <item>Apex Legends</item>
+        <item>Fortnite</item>
+        <item>League of Legends</item>
+        <item>Overwatch 2</item>
+        <item>Paladins</item>
+        <item>Valorant</item>
+    </string-array>
+    <string-array name="rank_dropdown">
+        <item>Iron</item>
+        <item>Bronze</item>
+        <item>Silver</item>
+        <item>Gold</item>
+        <item>Platinum</item>
+        <item>Diamond</item>
+        <item>Ascendant</item>
+        <item>Immortal</item>
+        <item>Radiant</item>
+    </string-array>
 </resources>
